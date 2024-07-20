@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualización de Datos del Formulario</title>
+</head>
+<body>
+    <h2>Datos del Formulario</h2>
+    <div id="datosFormulario"></div>
+
+    <script>
+        // Función para mostrar los datos del formulario en la página del administrador
+        function mostrarDatosFormulario(nombre) {
+            // Crear un elemento de párrafo para mostrar el nombre
+            var parrafo = document.createElement("p");
+            parrafo.textContent = "Nombre: " + nombre;
+
+            // Agregar el elemento de párrafo al div de datos del formulario
+            var datosFormularioDiv = document.getElementById("datosFormulario");
+            datosFormularioDiv.appendChild(parrafo);
+        }
+
+        // Llamar a la función de muestra al cargar la página (solo para demostración)
+        // En una aplicación real, esto podría estar en una función de respuesta a un evento, como un clic en un botón
+        window.onload = function() {
+            // Obtener los datos del formulario almacenados en el localStorage
+            var nombre = localStorage.getItem("nombre");
+
+            // Mostrar los datos del formulario
+            mostrarDatosFormulario(nombre);
+        };
+    </script>
+</body>
+</html>

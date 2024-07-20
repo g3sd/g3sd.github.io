@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+    <title>Formulario de Fecha</title>
+    <style>
+        body {
+            text-align: center;
+            margin-top: 30px;
+            font-family: 'Courier';
+            background-color:#0e0d0b;
+            color: #FF9494;
+        }
+        h1 {
+            font-size: 40px;
+        }
+        form {
+            display: inline-block;
+        }
+        .form-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .button {
+            padding: 6px 10px;
+            font-size: 14px;
+            cursor: pointer;
+            margin: 10px;
+            font-family: 'courier';
+            margin-bottom: 10px;
+            background-color:#FFE3E1;
+            color: #e67373;
+            border-radius: 12px;
+            border: 2px solid #FFE3E1;
+        }
+    </style>
+</head>
+<body>
+    <h1 title="choose a date">¿Cuándo estarás libre?</h1>
+    <p>(selecciona una fecha)</p>
+    <form id="miFormulario" class="form-group" action="food.html">
+        <label>Qué día: </label>
+        <input type="date" id="fecha" name="fecha">
+        <button class="button" type="submit">Guardar</button>
+    </form>
+
+    <script>
+        // Función para manejar el evento de envío del formulario
+        document.getElementById("miFormulario").addEventListener("submit", function(event) {
+            // Capturar el valor de la fecha seleccionada
+            var fecha = document.getElementById("fecha").value;
+
+            // Almacenar la fecha en el localStorage
+            localStorage.setItem("fecha", fecha);
+        });
+    </script>
+</body>
+</html>
